@@ -1,0 +1,10 @@
+@mixin colorchange {
+  $colors: $lightblue, $darkblue, $green, $pink;
+  @for $i from 1 through length($colors) {
+    p:nth-child(#{length($colors)}n+#{$i}) {
+        background: nth($colors, $i);
+        //padding: 50px;
+        margin: 0;
+    }
+  }
+}

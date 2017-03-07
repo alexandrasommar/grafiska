@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/css/style.css">
-    <title></title>
-  </head>
-  <body>
-    <h1>Hej hej</h1>
-
+<?php require_once "inc/header.php"; ?>
+    <header>
+      <nav>
+          <p><a href="idea.php">IDÉ</a></p>
+          <p><a href="typography.php">Typografi</a></p>
+          <p><a href="image.php">Bild</a></p>
+          <p><a href="layout.php">Layout</a></p>
+      </nav>
+    </header>
   </body>
 </html>
