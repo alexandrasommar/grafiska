@@ -1,5 +1,8 @@
 @import "assets/mixins";
 
+/* ***************************
+		BASE
+*************************** */
 body {
 	font-family: 'Francois One', sans-serif;
 	height: 100vh;
@@ -29,6 +32,144 @@ nav {
 	@include colorchange;
 }
 
-.idea {
+/* ***************************
+		Idea
+*************************** */
+.dragscroll {
+		background-image:url('http://api.thumbr.it/whitenoise-361x370.png?background=fafafaff&noise=626262&density=15&opacity=15');
+	//background-color: $pale;
+		//background-color: #F8EAEB;
+	// width: 320px;
+	// height: 160px;
+	overflow: scroll;
+	cursor: grab;
+	cursor : -o-grab;
+	cursor : -moz-grab;
+	cursor : -webkit-grab;
+	height: 1500px;
+	width: 2500px;
+}
+
+.hello {
+	position: absolute;
+	top: 20px;
+	background-color: #f2f2f2;
+	width: 150px;
+	height: 350px;
+	padding: 20px;
+	border-radius: 50px;
+	left: 350px;
+	z-index: -2;
+}
+
+.littlecreature {
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	width: 400px;
+	z-index: -1;
+}
+
+.smth {
+	position: absolute;
+	left: -50px;
+	top: 450px;
+	z-index: -4;
+}
+
+.sad {
+	width: 300px;
+	position: absolute;
+	left: 540px;
+	top: 340px;
+	border-radius: 20px;
+	animation: rollover 3s infinite;
+}
+
+@keyframes rollover {
+	0% {
+		transform: scale(.3);;
+	}
+	// 50% {
+	// 	transform: rotate(70deg);
+	// }
+	// 75% {
+	// 	transform: rotate(100deg);
+	// }
+	100% {
+		transform: scale(1.5);
+	}
+}
+
+.usedto {
+	position: absolute;
+	left: 120px;
+	top: 400px;
+	color: #fff;
+	font-size: 20px;
+}
+
+.bio-nav {
+	font-family: 'Patrick Hand', cursive;
 	background-color: $lightblue;
+	color: #fff;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;
+	right: 0;
+	width: 100px;
+	border-radius: 10px;
+}
+
+
+.idea {
+	font-family: 'Patrick Hand', cursive;
+	a {
+		color: $lightblue;
+	}
+}
+
+.start-bio {
+	background-color: #EBD4CB;
+	font-family: 'Patrick Hand', cursive;
+	height: 100vh;
+	width: 100%;
+	color: #f2f2f2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	button {
+		background-color: transparent;
+		border: 3px solid $pink;
+		font-family: 'Patrick Hand', cursive;
+	}
+}
+
+.contact {
+	background-color: #fff;
+	position: absolute;
+	right: 550px;
+	bottom: -790px;
+	padding: 20px;
+	border-radius: 40px;
+	textarea {
+		border: 1px solid black;
+		margin: 10px 0;
+		border-radius: 5px;
+	}
+	input {
+		border: 1px solid black;
+		margin: 10px 0;
+		border-radius: 5px;
+	}
+
+	.submit {
+		background-color: $pink;
+		font-family: 'Patrick Hand', cursive;
+		width: 150px;
+		padding: 10px;
+	}
 }
