@@ -3,173 +3,311 @@
 /* ***************************
 		BASE
 *************************** */
+
+:root {
+	font-size: 62.5%;
+}
 body {
 	font-family: 'Francois One', sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
 	height: 100vh;
 }
 
 a {
+	color: $white;
 	text-decoration: none;
-	color: #fff;
 	&:hover {
 		color: $pink;
 	}
 }
 
+h1, h2, h3 {
+	font-weight: 400;
+}
 nav {
-	width: 100vw;
-	display: flex;
-	flex-flow: column;
+	color: $white;
 	font-size: 28px;
+	font-size: 2.8rem;
 	text-transform: uppercase;
-	color: #fff;
+	width: 100vw;
+	@include flexbox();
+	@include flex-direction(column);
+	@include colorchange;
 	p {
 		height: calc(100vh / 4);
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flexbox();
+		@include align-items(center);
+		@include justify-content(center);
 	}
-	@include colorchange;
 }
 
 /* ***************************
 		Idea
 *************************** */
-.dragscroll {
-		background-image:url('http://api.thumbr.it/whitenoise-361x370.png?background=fafafaff&noise=626262&density=15&opacity=15');
-	//background-color: $pale;
-		//background-color: #F8EAEB;
-	// width: 320px;
-	// height: 160px;
-	overflow: scroll;
-	cursor: grab;
-	cursor : -o-grab;
-	cursor : -moz-grab;
-	cursor : -webkit-grab;
-	height: 1500px;
-	width: 2500px;
-}
-
-.hello {
-	position: absolute;
-	top: 20px;
-	background-color: #f2f2f2;
-	width: 150px;
-	height: 350px;
-	padding: 20px;
-	border-radius: 50px;
-	left: 350px;
-	z-index: -2;
-}
-
-.littlecreature {
-	position: absolute;
-	bottom: 50px;
-	left: 0;
-	width: 400px;
-	z-index: -1;
-}
-
-.smth {
-	position: absolute;
-	left: -50px;
-	top: 450px;
-	z-index: -4;
-}
-
-.sad {
-	width: 300px;
-	position: absolute;
-	left: 540px;
-	top: 340px;
-	border-radius: 20px;
-	animation: rollover 3s infinite;
-}
-
-@keyframes rollover {
-	0% {
-		transform: scale(.3);;
-	}
-	// 50% {
-	// 	transform: rotate(70deg);
-	// }
-	// 75% {
-	// 	transform: rotate(100deg);
-	// }
-	100% {
-		transform: scale(1.5);
-	}
-}
-
-.usedto {
-	position: absolute;
-	left: 120px;
-	top: 400px;
-	color: #fff;
-	font-size: 20px;
-}
-
-.bio-nav {
-	font-family: 'Patrick Hand', cursive;
-	background-color: $lightblue;
-	color: #fff;
-	padding: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	position: fixed;
-	right: 0;
-	width: 100px;
-	border-radius: 10px;
-}
-
 
 .idea {
-	font-family: 'Patrick Hand', cursive;
-	a {
-		color: $lightblue;
-	}
-}
-
-.start-bio {
-	background-color: #EBD4CB;
-	font-family: 'Patrick Hand', cursive;
-	height: 100vh;
-	width: 100%;
-	color: #f2f2f2;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-flow: column;
-	button {
-		background-color: transparent;
-		border: 3px solid $pink;
-		font-family: 'Patrick Hand', cursive;
-	}
-}
-
-.contact {
-	background-color: #fff;
-	position: absolute;
-	right: 550px;
-	bottom: -790px;
+	background-color: $lightblue;
+	color: $white;
 	padding: 20px;
-	border-radius: 40px;
-	textarea {
-		border: 1px solid black;
-		margin: 10px 0;
-		border-radius: 5px;
+	text-transform: uppercase;
+	width: 570px;
+}
+.back {
+	background-color: $pink;
+	border: 2px dashed $white;
+	padding: 10px;
+	width: 590px;
+	margin-bottom: 15px;
+}
+
+.bio-bak {
+		font-family: 'Helvetica';
+}
+
+.ordinary {
+	margin-top: 5%;
+	@include flexbox();
+	@include justify-content(center);
+
+	h1 {
+		font-size: 64px;
+		font-size: 6.4rem;
 	}
-	input {
-		border: 1px solid black;
-		margin: 10px 0;
-		border-radius: 5px;
+}
+header {
+	@include flexbox();
+	@include justify-content(space-around);
+}
+.about {
+	@extend .ordinary;
+	margin-top: 2%;
+	margin: 0 auto;
+	width: 70%;
+	@include flex-direction(column);
+	h1 {
+		font-family: 'Helvetica';
+	}
+	a {
+		color: $pink;
+		&:hover {
+			color: $darkblue;
+		}
+	}
+}
+textarea {
+	margin: 15px 0;
+	width: 90%;
+	@include borderline;
+}
+
+input {
+	margin: 15px 0;
+	width: 90%;
+	@include borderline;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+	background-color: rgba(0, 0, 0, 0.83);
+	color: $white;
+	padding: 10px;
+	text-transform: uppercase;
+	width: 91%;
+}
+
+.ul-bio {
+	padding: 0;
+	@include flexbox();
+	@include justify-content(space-around);
+	a {
+		color: #000;
+		&:hover {
+			color: grey;
+		}
+	}
+	li {
+		border-bottom: 2px solid black;
+		border-top: 2px solid black;
+		color: #000;
+		font-family: 'Helvetica';
+		font-size: 18px;
+		font-size: 1.8rem;
+		list-style: none;
+		padding: 5px;
 	}
 
-	.submit {
-		background-color: $pink;
-		font-family: 'Patrick Hand', cursive;
-		width: 150px;
-		padding: 10px;
+}
+
+.shop {
+	margin: 0 auto;
+	padding-top: 2%;
+	width: 60%;
+	@include flexbox();
+	@include flex-direction(column);
+	@include justify-content(center);
+	img {
+		width: 90%;
 	}
+}
+
+/* ***************************
+		Typography
+*************************** */
+
+.typography {
+	h1 {
+		background-color: $darkblue;
+		color: $white;
+		font-weight: 400;
+		padding: 50px;
+		text-transform: uppercase;
+		width: 150px;
+	}
+	p {
+		background-color: $pink;
+		border: 2px dashed $white;
+		padding: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		width: 200px;
+	}
+}
+
+svg {
+	display: block;
+}
+
+.container-typo {
+	margin: 0 auto;
+	max-width: 500px;
+	@include flexbox();
+	@include flex-direction(column);
+}
+.flygande {
+	margin-bottom: 30px;
+	width: 30%;
+}
+.backasiner {
+	align-self: flex-end;
+	margin-bottom: 30px;
+	width: 60%;
+}
+
+.soka {
+	margin-bottom: 30px;
+	width: 18%;
+}
+
+.whila {
+	align-self: flex-end;
+	margin-bottom: 30px;
+	width: 28%;
+}
+
+.pa {
+	margin-bottom: 30px;
+	width: 9%;
+}
+
+.mjuka {
+	align-self: flex-end;
+	margin-bottom: 30px;
+	width: 30%;
+}
+
+.tuvor {
+	width: 20%;
+}
+
+/* ***************************
+		Typography 2
+*************************** */
+
+.typo {
+	margin: 0 auto;
+	width: 45%;
+}
+
+.gossip {
+	border-bottom: 2px double #000;
+	font-family: 'Noto Sans', sans-serif;
+	padding: 100px 0;
+	p {
+		font-size: 17px;
+		line-height: 26px;
+		margin: 24px 0;
+	}
+	h1 {
+		font-weight: 700;
+		line-height: 42px;
+	}
+}
+
+.motivate {
+	background-color: $pink;
+	color: #494949;
+	padding: 20px;
+}
+
+.typo2 {
+	border-bottom: 2px double black;
+	font-family: 'Lora', serif;
+	padding: 120px 0;
+	h1 {
+		font-family: 'Lora', serif;
+		font-size: 44px;
+		font-size: 4.4rem;
+		font-weight: 700;
+		line-height: 40px;
+	}
+	h2 {
+		font-weight: 700;
+		line-height: 34px;
+	}
+	p {
+		font-size: 17px;
+		font-size: 1.7rem;
+		line-height: 26px;
+		margin: 24px 0;
+	}
+}
+
+.bd {
+	font-family: 'Crimson Text', serif;
+	margin: 150px 0;
+	p {
+		font-size: 20px;
+		font-size: 2.0rem;
+		line-height: 26px;
+		margin: 20px 0;
+	}
+	h1 {
+		font-size: 46px;
+		font-size: 4.6rem;
+		font-weight: 700;
+		letter-spacing: 0.8px;
+	}
+}
+/* ***************************
+		Image
+*************************** */
+.komm {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+	@include flexbox();
+	@include justify-content(center);
+	@include flex-direction(column);
+	a {
+		color: $pink;
+		&:hover {
+			color: #000;
+		}
+	}
+}
+
+.komm-image {
+	border: 0.5px solid #362f2d;
+	margin: 0 auto;
+	max-width: 70%;
 }
